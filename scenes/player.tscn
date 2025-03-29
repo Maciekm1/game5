@@ -61,3 +61,4 @@ scale = Vector2(3, 3)
 health_component = NodePath("../HealthComponent")
 
 [node name="GraceTimer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

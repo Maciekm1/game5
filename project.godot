@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game5"
-run/main_scene="uid://c0vc4y15dm6iu"
+run/main_scene="uid://cudwpcjq3uw3u"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
