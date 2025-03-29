@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var speed = 400
+@export var health_component: HealthComponent
 var screen_size
 
 func _ready():
@@ -17,6 +18,10 @@ func _process(delta: float) -> void:
 		vel.y -= 1
 	if Input.is_action_pressed("move_down"):
 		vel.y += 1
+	if Input.is_action_just_pressed("take_damage"):
+		health_component.take_damage(1)
+	if Input.is_action_just_pressed("heal"):
+		health_component.heal(1)
 		
 	if vel.length() > 0:
 		vel = vel.normalized() * speed
