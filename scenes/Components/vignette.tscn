@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7qwugmig4fbf"]
+[gd_scene load_steps=7 format=3 uid="uid://b7qwugmig4fbf"]
 
 [ext_resource type="Script" uid="uid://cuis333l2o7uq" path="res://scenes/Components/vignette.gd" id="1_hlrbt"]
 [ext_resource type="Shader" uid="uid://0p0lnx3qrjb2" path="res://scenes/Components/vignette.gdshader" id="2_5kohn"]
 [ext_resource type="Animation" uid="uid://u5glikbee0kj" path="res://assets/animations/player_damage.res" id="2_o7ey6"]
+[ext_resource type="Animation" uid="uid://c5rf48e37kxdk" path="res://assets/animations/RESET.res" id="3_r0xaq"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7ey6"]
 _data = {
+&"RESET": ExtResource("3_r0xaq"),
 &"player_damage": ExtResource("2_o7ey6")
 }
 
