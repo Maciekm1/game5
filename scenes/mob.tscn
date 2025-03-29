@@ -47,23 +47,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr3yx"]
 size = Vector2(72, 107)
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Mob" type="RigidBody2D" parent="."]
+[node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_ebxvl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_805hl")
-animation = &"swim"
+animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_jr3yx")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Mob"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[connection signal="screen_exited" from="Mob/VisibleOnScreenNotifier2D" to="Mob" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
