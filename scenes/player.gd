@@ -1,4 +1,4 @@
-extends Area2D
+class_name Player extends Area2D
 
 @export var speed = 400
 @export var health_component: HealthComponent
