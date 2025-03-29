@@ -16,15 +16,12 @@ point_count = 5
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
 mob_scene = ExtResource("2_jyhfs")
+debuff_scene = ExtResource("5_tbgi4")
 
 [node name="Vignette" parent="." instance=ExtResource("5_tbgi4")]
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
 position = Vector2(539, 360)
-
-[node name="Debuff" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(248, 256)
-collision_mask = 1
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -45,9 +42,13 @@ curve = SubResource("Curve2D_jyhfs")
 
 [node name="HUD" parent="." instance=ExtResource("4_jyhfs")]
 
+[node name="DebuffTimer" type="Timer" parent="."]
+wait_time = 6.0
+
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="DebuffTimer" to="." method="_on_debuff_timer_timeout"]

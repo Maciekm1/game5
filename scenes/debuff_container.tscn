@@ -1,21 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://b04w8b0t0yk5e"]
+[gd_scene load_steps=5 format=3 uid="uid://b04w8b0t0yk5e"]
 
 [ext_resource type="Script" uid="uid://dkmqpcgkihdg1" path="res://scenes/debuff.gd" id="1_37frh"]
+[ext_resource type="Script" uid="uid://b3ln2lknbl30i" path="res://scenes/sprite_2d.gd" id="2_fyhsi"]
+[ext_resource type="Texture2D" uid="uid://dsh026gitagkb" path="res://assets/art/debuff_base.png" id="2_i788d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hy03w"]
 size = Vector2(100, 58)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_korx6"]
-size = Vector2(60, 60)
-
 [node name="Debuff" type="Area2D"]
-collision_mask = 0
 script = ExtResource("1_37frh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hy03w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_korx6")
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_i788d")
+script = ExtResource("2_fyhsi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
