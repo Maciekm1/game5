@@ -49,8 +49,8 @@ animation = &"up"
 shape = SubResource("CircleShape2D_u8vuu")
 
 [node name="HealthComponent" parent="." instance=ExtResource("7_smehm")]
-min_health = 3.0
-max_health = 3.0
+min_health = 5.0
+max_health = 5.0
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_fjrip")]
 offset_left = -14.0

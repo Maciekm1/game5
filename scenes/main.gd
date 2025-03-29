@@ -5,7 +5,8 @@ var score
 
 
 func _on_player_hit() -> void:
-	game_over()
+	#game_over()
+	pass
 	
 func game_over() -> void:
 	$ScoreTimer.stop()

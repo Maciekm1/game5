@@ -53,7 +53,9 @@ func start(pos):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
 	hit.emit()
+	health_component.take_damage(1)
+	if body is Mob:
+		body.die()
 	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true) # Replace with function body.
+	# $CollisionShape2D.set_deferred("disabled", true) # Replace with function body.
