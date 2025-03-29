@@ -1,8 +1,8 @@
 extends Node
 
-var player_speed: int
-var enemy_speed_min: int
-var enemy_speed_max: int
+var player_speed: float
+var enemy_speed_min: float
+var enemy_speed_max: float
 var enemy_spawn_rate: int
 
 func _ready() -> void:

@@ -1,6 +1,5 @@
-extends Area2D
+class_name Player extends Area2D
 
-@export var speed = 400
 @export var health_component: HealthComponent
 @export var bullet_scene: Bullet
 var screen_size
@@ -30,7 +29,7 @@ func _process(delta: float) -> void:
 		health_component.heal(1)
 		
 	if vel.length() > 0:
-		vel = vel.normalized() * speed
+		vel = vel.normalized() * Globals.player_speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
