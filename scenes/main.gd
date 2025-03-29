@@ -78,6 +78,6 @@ func _on_debuff_timer_timeout() -> void:
 	var pos = Vector2(randf() * screen_size.x, randf() * screen_size.y)
 	
 	var debuff = debuff_scene.instantiate() as Debuff
-	debuff.type = randi() % len(debuff.DEBUF_TYPE)
+	debuff.type = randi() % len(Debuff.DEBUF_TYPE)
 	debuff.position = pos
 	add_child(debuff)

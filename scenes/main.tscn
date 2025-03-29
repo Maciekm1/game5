@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cipl7yn08u4r0" path="res://scenes/mob.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c0vc4y15dm6iu" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dkuyq0075077k" path="res://scenes/hud.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://b04w8b0t0yk5e" path="res://scenes/debuff_container.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b7qwugmig4fbf" path="res://scenes/Components/vignette.tscn" id="5_tbgi4"]
 
 [sub_resource type="Curve2D" id="Curve2D_jyhfs"]
