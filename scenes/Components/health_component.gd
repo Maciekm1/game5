@@ -41,7 +41,8 @@ func get_health_percent() -> float:
 func check_death():
 		if current_health == 0:
 			died.emit()
-			owner.queue_free()
+			#owner.queue_free()
+			owner.hide()
 			
 func is_immune() -> bool:
 	if dash_component and dash_component.is_immune():

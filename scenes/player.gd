@@ -6,9 +6,12 @@ extends Area2D
 var screen_size
 
 signal hit
+signal died
 
 func _ready():
+	hide()
 	screen_size = get_viewport_rect().size
+	health_component.died.connect(on_player_died)
 	
 func _process(delta: float) -> void:
 	var vel = Vector2.ZERO
@@ -59,3 +62,12 @@ func _on_body_entered(body: Node2D) -> void:
 		body.die()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	# $CollisionShape2D.set_deferred("disabled", true) # Replace with function body.
+
+func on_player_died():
+	died.emit()
+	
+func reset_health():
+	health_component.heal(999)
+	
+
+	

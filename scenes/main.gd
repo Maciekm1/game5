@@ -5,8 +5,8 @@ var score
 
 
 func _on_player_hit() -> void:
-	#game_over()
-	pass
+	print('player hit')
+	
 	
 func game_over() -> void:
 	$ScoreTimer.stop()
@@ -18,6 +18,7 @@ func new_game():
 	
 	score = 0
 	$Player.start($StartPosition.position)
+	$Player.reset_health()
 	$StartTimer.start()
 	
 	$HUD.update_score(score)
@@ -63,3 +64,7 @@ func _on_start_timer_timeout() -> void:
 
 func _on_hud_start_game() -> void:
 	new_game() # Replace with function body.
+
+
+func _on_player_died() -> void:
+	game_over()
