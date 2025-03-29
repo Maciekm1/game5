@@ -6,6 +6,8 @@ func _ready():
 	#GameEvents.player_healed.connect(on_player_healed)
 	
 func on_player_damaged() -> void:
+	if $AnimationPlayer.is_playing():
+		$AnimationPlayer.stop()
 	$AnimationPlayer.play("player_damage")
 	
 func on_player_healed() -> void:
