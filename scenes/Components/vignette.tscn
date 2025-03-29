@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7qwugmig4fbf"]
+
+[ext_resource type="Script" uid="uid://cuis333l2o7uq" path="res://scenes/Components/vignette.gd" id="1_hlrbt"]
+[ext_resource type="Shader" uid="uid://0p0lnx3qrjb2" path="res://scenes/Components/vignette.gdshader" id="2_5kohn"]
+[ext_resource type="Animation" uid="uid://u5glikbee0kj" path="res://assets/animations/player_damage.res" id="2_o7ey6"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7ey6"]
+_data = {
+&"player_damage": ExtResource("2_o7ey6")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7ey6"]
+shader = ExtResource("2_5kohn")
+shader_parameter/vignette_intensity = 0.682
+shader_parameter/vignette_opacity = 0.115
+shader_parameter/vignette_rgb = Color(0.180392, 0.137255, 0.0235294, 1)
+
+[node name="Vignette" type="CanvasLayer"]
+script = ExtResource("1_hlrbt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o7ey6")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_o7ey6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0vc4y15dm6iu"]
+[gd_scene load_steps=12 format=3 uid="uid://c0vc4y15dm6iu"]
 
 [ext_resource type="Texture2D" uid="uid://1qcpwe3ff6mn" path="res://assets/art/playerGrey_up1.png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://dodtey2l2cwyj" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://k8yt30eyrqk8" path="res://assets/art/playerGrey_walk2.png" id="4_fjrip"]
 [ext_resource type="PackedScene" uid="uid://b6xd85ifvleu8" path="res://scenes/Components/health_bar_component.tscn" id="6_fjrip"]
 [ext_resource type="PackedScene" uid="uid://bcnr7mkxts3pp" path="res://scenes/Components/health_component.tscn" id="7_smehm"]
+[ext_resource type="PackedScene" uid="uid://bxjn6edfboy78" path="res://scenes/Components/trail_component.tscn" id="8_smehm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
 animations = [{
@@ -36,6 +37,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 radius = 24.0832
 
+[sub_resource type="Curve" id="Curve_smehm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="Area2D" node_paths=PackedStringArray("health_component")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qlg0r")
@@ -62,5 +67,10 @@ scale = Vector2(3, 3)
 health_component = NodePath("../HealthComponent")
 
 [node name="GraceTimer" type="Timer" parent="."]
+
+[node name="TrailComponent" parent="." instance=ExtResource("8_smehm")]
+show_behind_parent = true
+width_curve = SubResource("Curve_smehm")
+length = 15
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

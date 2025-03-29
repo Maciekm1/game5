@@ -5,7 +5,7 @@ var score
 
 
 func _on_player_hit() -> void:
-	print('player hit')
+	Globals.emit_played_damaged()
 	
 	
 func game_over() -> void:

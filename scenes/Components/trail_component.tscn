@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxjn6edfboy78"]
+
+[ext_resource type="Script" uid="uid://d4fe7kvwl6ij7" path="res://trail_component.gd" id="1_ppik3"]
+
+[node name="TrailComponent" type="Line2D"]
+script = ExtResource("1_ppik3")
