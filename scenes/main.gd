@@ -1,6 +1,7 @@
 extends Node
 
 @export var mob_scene: PackedScene
+@export var debuff_scene: PackedScene
 var score
 
 
@@ -60,6 +61,7 @@ func _on_score_timer_timeout() -> void:
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()
 	$ScoreTimer.start()
+	$DebuffTimer.start()
 
 
 func _on_hud_start_game() -> void:
@@ -68,3 +70,14 @@ func _on_hud_start_game() -> void:
 
 func _on_player_died() -> void:
 	game_over()
+
+
+func _on_debuff_timer_timeout() -> void:
+	# Random position for debuff
+	var screen_size = get_viewport().get_visible_rect().size
+	var pos = Vector2(randf() * screen_size.x, randf() * screen_size.y)
+	
+	var debuff = debuff_scene.instantiate() as Debuff
+	debuff.type = randi() % len(debuff.DEBUF_TYPE)
+	debuff.position = pos
+	add_child(debuff)
