@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed = 400
 @export var health_component: HealthComponent
+@export var bullet_scene: Bullet
 var screen_size
 
 func _ready():
