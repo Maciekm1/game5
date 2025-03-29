@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
-radius = 48.0416
+radius = 24.0832
 
 [node name="Player" type="Area2D" node_paths=PackedStringArray("health_component")]
 scale = Vector2(0.5, 0.5)
@@ -42,6 +42,7 @@ script = ExtResource("1_qlg0r")
 health_component = NodePath("HealthComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
 animation = &"up"
 
@@ -54,9 +55,9 @@ max_health = 5.0
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_fjrip")]
 offset_left = -14.0
-offset_top = -92.0
+offset_top = -60.0
 offset_right = 16.0
-offset_bottom = -87.0
+offset_bottom = -55.0
 scale = Vector2(3, 3)
 health_component = NodePath("../HealthComponent")
 
